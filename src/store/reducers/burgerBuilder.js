@@ -1,5 +1,5 @@
 import *  as actionTypes from '../actions/actionTypes';
-import { updateObject } from '../utility';
+import { updateObject } from '../../shared/utility';
 
 const initialState = {
     ingredients: null,
@@ -60,7 +60,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.ADD_INGREDIENT: return addIngredient(state, action);
         case actionTypes.REMOVE_INGREDIENT: return removeIngredient(state, action);
         case actionTypes.SET_INGREDIENTS: return setIngredient(state, action);  
-        case actionTypes.FETCH_INGREDIENTS_FAILED: fetchIngredientFailed(state, action);
+        case actionTypes.FETCH_INGREDIENTS_FAILED: return fetchIngredientFailed(state, action);
         default: return state;
     }
 };
